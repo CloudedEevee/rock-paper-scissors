@@ -1,40 +1,42 @@
-// Play a round of Rock Paper Scissors
+//Play a round of RPS
 
-// Input a selection as the player
-    let playerSelection = "Scissors";
-
-
-// Assign a selection for the computer
-    function getComputerChoice() {
-        // get a random number
-        let randomNumber = Math.floor(Math.random()*100);
-                    // console.log(randomNumber)
-
-        // assign random number to 'rock', 'paper', or 'scissors' for computer's selection
-        if (randomNumber >= 0 && randomNumber < 33) {
-            return computerSelection = "Rock"
-        }
-        else if (randomNumber >= 33 && randomNumber < 66) {
-            return computerSelection = "Paper"
-        }
-        else if (randomNumber >= 66 && randomNumber <= 99) {
-            return computerSelection = "Scissors"
-        }
-            else (console.log("H-how...? Uh.. Try again bc this shouldn't have been possible."))
-    } 
+        function playRound(playerSelection, computerSelection) {
+                //Input playerSelection (+global variables)
+                    playerSelection = "Scissors";
+                    computerSelection = getComputerChoice();
 
 
-//Evaluate the selections against each other to find the winner
-    function playRound(playerSelection, computerSelection) {
-        let computerSelection = getComputerChoice();
-        if (playerSelection.toLowerCase() === "paper" && computerSelection === "Rock")
-            console.log("You win! Paper beats Rock.")
-    }
-        else (console.log("Try again."))
+                        //Input computerSelection (function declaration)
+                            function getComputerChoice() {
+                                        //create computerSelection
+                                            //get a random number
+                                        let randomNumber = Math.floor(Math.random()*100);
+
+                                            // assign random number to 'rock', 'paper', or 'scissors' for computer's selection
+                                        if (randomNumber >= 0 && randomNumber < 33) {
+                                            return result = "Rock"
+                                        }
+                                        else if (randomNumber >= 33 && randomNumber < 66) {
+                                            return result = "Paper"
+                                        }
+                                        else if (randomNumber >= 66 && randomNumber <= 99) {
+                                            return result = "Scissors"
+                                        }
+                                            else (console.log("H-how...? Uh.. Try again bc this shouldn't have been possible."))
+                                    }
+                                    
+                //Compare inputs, select winner, announce a winner (function declaration)                 
+                    if (playerSelection === "Scissors" && computerSelection === "Rock") {
+                        return result = console.log("Congrats! Scissors beats Rock.")
+                    }
+                    else if (playerSelection === "Scissors" && computerSelection === "Scissors") {
+                        return result = console.log("Oops, S&S is a tie.")
+                    }
+                    else if (playerSelection === "Scissors" && computerSelection === "Paper") {
+                        return result = console.log("Oof, Paper beats Scissors.")
+                    }
+                    else (console.log("Sorry, no dice. Try again."))
+                }
 
 
-//Two errors rn, "Identifier 'computerSelection' has already been declared (at script.js:29:13)"
-// and "ReferenceError: playRound is not defined"
-
-
-//I need to figure out how to nest these functions and values to work together
+playRound();
